@@ -1,0 +1,23 @@
+extends: ./node_modules/eslint-config-google/index.js
+plugins:
+  - react
+installedESLint: true
+env:
+  es6: true
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+rules:
+  semi: false
+  react/jsx-uses-vars:
+    - 2
+  object-curly-spacing: off
+  arrow-parens: off
+  no-unused-vars:
+    - 1
+    - vars: all
+      args: after-used
+globals:
+  document: true
+  location: true
+  window: true

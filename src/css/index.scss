@@ -1,0 +1,83 @@
+@import "../../node_modules/sanitize.css/sanitize.css";
+@import './variables.scss';
+
+:root {
+  --root-box-sizing: border-box;
+}
+
+//////////////////////////////////////////////////////////////////
+// To bug fix of material ui
+// defails : https://github.com/callemall/material-ui/issues/4008
+//////////////////////////////////////////////////////////////////
+span[type=button] {
+  appearance: none;
+  -webkit-appearance: none
+}
+a[type=button] {
+  appearance: none;
+  -webkit-appearance: none
+}
+//////////////////////////////////////////////////////////////////
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background: $background_color;
+  color: $font_color;
+  margin: 3.2rem 0 0 0;
+  height: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: -4.5rem;
+  height: 4rem;
+  background: #111;
+  color: #ccc;
+  width: 100%;
+  text-align: center;
+}
+
+.mainContent {
+  margin: 0 auto 0 auto;
+}
+
+.selected {
+  background-color: $selected_background !important;
+}
+
+.mainColor {
+  background-color: $app_main_color !important;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.horizonCenterBlock {
+  @extend .flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.verticalCenterBlock {
+  @extend .flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.jumboTron {
+  @extend .mainColor;
+  @extend .horizonCenterBlock;
+  @extend .verticalCenterBlock;
+  text-align: center;
+  height: $jumbotron_height;
+  h1 {
+    font-size: $jumbotron_title_font_size;
+  }
+}

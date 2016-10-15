@@ -1,0 +1,49 @@
+{
+  "name": "sfa",
+  "version": "1.0.0",
+  "description": "Trash system mock",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack-dev-server -d --inline --content-base . --history-api-fallback"
+  },
+  "author": "ryutah",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.5.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "flexboxgrid": "^6.3.1",
+    "material-ui": "^0.15.4",
+    "node-sass": "^3.10.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-flexbox-grid": "^0.10.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.6.0",
+    "redux-actions": "^0.12.0",
+    "redux-devtools": "^3.3.1",
+    "redux-promise": "^0.5.3",
+    "sanitize.css": "^4.1.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "underscore": "^1.8.3",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-google": "^0.6.0"
+  }
+}
