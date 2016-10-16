@@ -58,3 +58,6 @@ Session.vim
 *~
 # auto-generated tag files
 tags
+
+.tern-port
+.tern-project
