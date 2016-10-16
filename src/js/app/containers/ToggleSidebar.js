@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(action.sidebarToggle())
       browserHistory.push("/async-sample")
     },
-    onCompanyMenuItemTouch: e =>{
+    onCompanyMenuItemTouch: e => {
       dispatch(action.sidebarToggle())
       browserHistory.push("/company")
     }

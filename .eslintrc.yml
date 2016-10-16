@@ -8,7 +8,7 @@ parserOptions:
   ecmaFeatures:
     jsx: true
 rules:
-  semi: false
+  semi: off
   react/jsx-uses-vars:
     - 2
   object-curly-spacing: off
