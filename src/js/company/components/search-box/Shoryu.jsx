@@ -5,6 +5,8 @@ import Remove from 'material-ui/svg-icons/content/remove'
 import TextField from 'material-ui/TextField'
 import Toggle from 'material-ui/Toggle'
 
+import actions from "../../actions"
+
 const style = {
   paper: {
     display: "inline-block",
@@ -21,13 +23,13 @@ const style = {
   }
 }
 
-const Shoryu = ({ index, shoryu, onRemoveClick }) =>
+const Shoryu = ({ index, shoryu, onRemoveClick, dispatch }) =>
   <Paper key={index} style={style.paper}>
     <div style={style.remButtonDiv}>
       <FloatingActionButton
         mini={true}
         secondary={true}
-        onClick={onRemoveClick}
+        onClick={dispatch.removeShoryu(index)}
       >
         <Remove />
       </FloatingActionButton>

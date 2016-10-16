@@ -1,11 +1,11 @@
-import React from 'react';
-import Drawer from 'material-ui/Drawer';
-import AppBar from 'material-ui/AppBar';
-import MenuItem from 'material-ui/MenuItem';
-import style from "../../../css";
+import React from "react"
+import Drawer from "material-ui/Drawer"
+import AppBar from "material-ui/AppBar"
+import MenuItem from "material-ui/MenuItem"
+import style from "../../../css"
 
 function menuItemStyle(itemPath) {
-  return location.pathname === itemPath ? style.selected : "";
+  return location.pathname === itemPath ? style.selected : ""
 }
 
 const styles = {
@@ -20,7 +20,7 @@ const styles = {
     left: 0,
     cursor: "pointer"
   }
-};
+}
 
 const Sidebar = props =>
   <Drawer
@@ -41,6 +41,11 @@ const Sidebar = props =>
       primaryText="ASYNC SAMPLE"
       onTouchTap={props.onAsyncMenuItemTouch}
     />
-  </Drawer>;
+    <MenuItem
+      className={menuItemStyle("/company")}
+      primaryText="会社検索"
+      onTouchTap={props.onCompanyMenuItemTouch}
+    />
+  </Drawer>
 
-export default Sidebar;
+export default Sidebar

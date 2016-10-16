@@ -11,7 +11,7 @@ const searchCond = {
 const copyObj = obj => Object.assign({}, obj)
 const copyArray = array => array.slice(0)
 
-export default handleActions({
+const shoryu = handleActions({
   ADD_SHORYU: (state, action) => {
     const newState = copyObj(state)
     const newShoryu = copyArray(state.shoryu)
@@ -27,3 +27,5 @@ export default handleActions({
     return newShoryu
   }
 }, searchCond)
+
+export default shoryu

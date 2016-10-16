@@ -1,7 +1,7 @@
-import React from "react";
-import AppBar from "./components/AppBar";
-import Footer from "./components/Footer";
-import ToggleSidebar from "./containers/ToggleSidebar";
+import React from "react"
+import AppBar from "./components/AppBar"
+import Footer from "./components/Footer"
+import ToggleSidebar from "./containers/ToggleSidebar"
 
 export default ({ children }) =>
   <div>
@@ -9,4 +9,4 @@ export default ({ children }) =>
     <ToggleSidebar />
     {children}
     <Footer />
-  </div>;
+  </div>

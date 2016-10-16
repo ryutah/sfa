@@ -1,14 +1,14 @@
-import React from "react";
+import React from "react"
 import {Card, CardActions, CardHeader, CardTitle, CardText}
-  from 'material-ui/Card';
-import FontIcon from 'material-ui/FontIcon';
-import IconButton from 'material-ui/IconButton';
-import {List, ListItem} from 'material-ui/List';
-import {red500, yellow500, blue500} from 'material-ui/styles/colors';
-import Person from 'material-ui/svg-icons/social/person';
-import Grade from 'material-ui/svg-icons/action/grade';
-import Phone from 'material-ui/svg-icons/hardware/phone-android';
-import _ from "underscore";
+  from "material-ui/Card"
+import FontIcon from "material-ui/FontIcon"
+import IconButton from "material-ui/IconButton"
+import {List, ListItem} from "material-ui/List"
+import {red500, yellow500, blue500} from "material-ui/styles/colors"
+import Person from "material-ui/svg-icons/social/person"
+import Grade from "material-ui/svg-icons/action/grade"
+import Phone from "material-ui/svg-icons/hardware/phone-android"
+import _ from "underscore"
 
 const style = {
   container: {
@@ -24,7 +24,7 @@ const style = {
     position: "absolute",
     right: "2.7rem"
   }
-};
+}
 
 const AsyncSample = () =>
   <Card style={style.container}>
@@ -38,8 +38,8 @@ const AsyncSample = () =>
         <IconButton
           tooltip="変更"
           onClick={e => {
-            e.preventDefault();
-            alert("CLICK EDIT");
+            e.preventDefault()
+            alert("CLICK EDIT")
           }}
         >
           <FontIcon className="material-icons" color={blue500}>
@@ -72,6 +72,6 @@ const AsyncSample = () =>
       <br />
       東京精密(北八王子)社員常駐。半導体製造装置 WinOS C言語 でかいプログラム
     </CardText>
-  </Card>;
+  </Card>
 
-export default AsyncSample;
+export default AsyncSample
