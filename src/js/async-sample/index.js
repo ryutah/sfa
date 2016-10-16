@@ -1,7 +1,7 @@
-import React from "react";
-import Company from "./components/Company";
-import Search from "./components/Search";
-import _ from "underscore";
+import React from "react"
+import Company from "./components/Company"
+import Search from "./components/Search"
+import _ from "underscore"
 
 const style = {
   header: {
@@ -13,13 +13,13 @@ const style = {
     position: "absolute",
     right: "3rem"
   }
-};
+}
 
 const AsyncSample = () =>
   <div style={{ maxWidth: "1720px", margin: "0 auto" }}>
     <h2>会社一覧</h2>
     <Search />
     {_.range(10).map(() => <Company />)}
-  </div>;
+  </div>
 
-export default AsyncSample;
+export default AsyncSample

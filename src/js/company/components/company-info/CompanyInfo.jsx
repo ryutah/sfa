@@ -19,7 +19,14 @@ const style = {
 
 export default ({ companyName, personName, grade, tel, note }) =>
   <Card style={style.card}>
-    <Header companyName={companyName} />
+    <CardHeader
+      title={companyName}
+      actAsExpander={true}
+      showExpandableButton={true}
+      style={style.cardHeader}
+    >
+      <Header companyName={companyName} />
+    </CardHeader>
     <OverView
       personName={personName}
       grade={grade}

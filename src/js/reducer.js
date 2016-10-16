@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux';
-import common from "./app/reducers";
-import { routerReducer } from 'react-router-redux';
+import { combineReducers } from "redux"
+import common from "./app/reducers"
+import company from "./company/reducers"
+import { reducer as formReducer } from "redux-form"
+import { routerReducer } from "react-router-redux"
 
-const reducers = combineReducers({
+export default combineReducers({
   common,
-  routing: routerReducer
-});
-
-export default reducers;
+  company,
+  routing: routerReducer,
+  form: formReducer
+})

@@ -1,12 +1,12 @@
-import React from "react";
-import TextField from 'material-ui/TextField';
-import FlatButton from 'material-ui/FlatButton';
-import Checkbox from 'material-ui/Checkbox';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
-import {red500, yellow500, blue500} from 'material-ui/styles/colors';
-import Add from 'material-ui/svg-icons/content/add';
-import Shoryu from "./Shoryu";
-import css from "../../../css";
+import React from "react"
+import TextField from "material-ui/TextField"
+import FlatButton from "material-ui/FlatButton"
+import Checkbox from "material-ui/Checkbox"
+import {Card, CardHeader, CardText} from "material-ui/Card"
+import {red500, yellow500, blue500} from "material-ui/styles/colors"
+import Add from "material-ui/svg-icons/content/add"
+import Shoryu from "./Shoryu"
+import css from "../../../css"
 
 const style = {
   container: {
@@ -21,7 +21,7 @@ const style = {
   searchButton: {
     width: "90%"
   }
-};
+}
 
 export default () =>
   <Card style={style.container}>
@@ -71,4 +71,4 @@ export default () =>
         />
       </form>
     </CardText>
-  </Card>;
+  </Card>

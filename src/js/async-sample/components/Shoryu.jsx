@@ -1,12 +1,12 @@
-import React from "react";
-import TextField from 'material-ui/TextField';
-import Checkbox from 'material-ui/Checkbox';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
-import {red500, yellow500, blue500} from 'material-ui/styles/colors';
-import Paper from 'material-ui/Paper';
-import Remove from 'material-ui/svg-icons/content/remove';
-import FontIcon from 'material-ui/FontIcon';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import React from "react"
+import TextField from "material-ui/TextField"
+import Checkbox from "material-ui/Checkbox"
+import {Card, CardHeader, CardText} from "material-ui/Card"
+import {red500, yellow500, blue500} from "material-ui/styles/colors"
+import Paper from "material-ui/Paper"
+import Remove from "material-ui/svg-icons/content/remove"
+import FontIcon from "material-ui/FontIcon"
+import FloatingActionButton from "material-ui/FloatingActionButton"
 
 const style = {
   paper: {
@@ -26,7 +26,7 @@ const style = {
   checkBox: {
     width: "8rem"
   }
-};
+}
 
 export default () =>
   <Paper style={style.paper}>
@@ -45,4 +45,4 @@ export default () =>
       labelPosition="left"
       style={style.checkBox}
     />
-  </Paper>;
+  </Paper>
