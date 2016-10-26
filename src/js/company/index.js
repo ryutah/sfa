@@ -1,6 +1,5 @@
 import React from "react"
-import _u from "underscore"
-
+import { Range } from "immutable"
 import mockData from "./CompanyInfoMock"
 import SearchBox from "./containers/SearchBox"
 import CompanyInfo from "./components/company-info/CompanyInfo"
@@ -10,7 +9,7 @@ const style = {
   margin: "0 auto"
 }
 
-const companies = _u.range(1, 20).map((e) => (
+const companies = Range(1, 20).map((e) => (
   <CompanyInfo
     key={`${e}`}
     companyName={mockData.companyName}

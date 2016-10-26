@@ -1,7 +1,7 @@
 import React from "react"
 import Company from "./components/Company"
 import Search from "./components/Search"
-import _ from "underscore"
+import { Range } from "immutable"
 
 const style = {
   header: {
@@ -19,7 +19,7 @@ const AsyncSample = () =>
   <div style={{ maxWidth: "1720px", margin: "0 auto" }}>
     <h2>会社一覧</h2>
     <Search />
-    {_.range(10).map(() => <Company />)}
+    {Range(0, 10).map(() => <Company />)}
   </div>
 
 export default AsyncSample

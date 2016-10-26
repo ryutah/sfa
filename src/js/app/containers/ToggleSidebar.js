@@ -4,7 +4,9 @@ import { browserHistory } from "react-router"
 import Sidebar from "../components/Sidebar"
 import action from "../actions"
 
-const mapStateToProps = ({ common }) => common
+const mapStateToProps = (state) =>  {
+  return state.get("common").toJS()
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {

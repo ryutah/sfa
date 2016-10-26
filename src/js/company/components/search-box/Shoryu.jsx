@@ -1,11 +1,14 @@
 import React from "react"
 import Paper from 'material-ui/Paper'
-import FloatingActionButton from 'material-ui/FloatingActionButton'
-import Remove from 'material-ui/svg-icons/content/remove'
-import TextField from 'material-ui/TextField'
-import Toggle from 'material-ui/Toggle'
+import FlatButton from 'material-ui/FlatButton';
+import { red500 } from "material-ui/styles/colors"
+import RemoveCircle from "material-ui/svg-icons/content/remove-circle"
+import { Field } from "redux-form/immutable"
 
-import actions from "../../actions"
+import {
+  TextFieldWrapper,
+  ToggleWrapper
+} from "../../../common/components/FieldWrapper"
 
 const style = {
   paper: {
@@ -18,37 +21,48 @@ const style = {
   remButtonDiv: {
     textAlign: "right"
   },
+  removeButton: {
+    color: red500
+  },
   textField: {
     width: "100%"
+  },
+  toggleDiv: {
+    marginTop: "1rem",
+    display: "inline-block",
+    width: "90%",
+    textAlign: "left"
+  },
+  toggle: {
+    width: "8rem"
   }
 }
 
-const Shoryu = ({ index, shoryu, onRemoveClick, dispatch }) =>
-  <Paper key={index} style={style.paper}>
+const Shoryu = ({ inputName, toggleName, onClickRemove }) =>
+  <Paper style={style.paper}>
     <div style={style.remButtonDiv}>
-      <FloatingActionButton
-        mini={true}
-        secondary={true}
-        onClick={dispatch.removeShoryu(index)}
-      >
-        <Remove />
-      </FloatingActionButton>
+      <FlatButton
+        label="削除"
+        labelPosition="before"
+        icon={<RemoveCircle />}
+        style={style.removeButton}
+        onClick={onClickRemove}
+      />
     </div>
-    <TextField
-      value={shoryu.name}
-      floatingLabelText="メイン商流"
+    <Field
+      name={inputName}
       style={style.textField}
+      label="メイン商流"
+      component={TextFieldWrapper}
     />
-    <Toggle
-      label="リーダー有無"
-      defaultToggled={shoryu.leader}
-    />
+    <div style={style.toggleDiv}>
+      <Field
+        name={toggleName}
+        label="リーダー有無"
+        component={ToggleWrapper}
+        style={style.toggle}
+      />
+    </div>
   </Paper>
-
-Shoryu.propTypes = {
-  index: React.PropTypes.number,
-  shoryu: React.PropTypes.object,
-  onRemoveClick: React.PropTypes.func
-}
 
 export default Shoryu

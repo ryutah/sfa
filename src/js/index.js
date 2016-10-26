@@ -14,7 +14,11 @@ const store = createStore(
   reducer,
   window.devToolsExtension && window.devToolsExtension()
 )
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store, {
+  selectLocationState(state) {
+    return state.get("routing").toJS()
+  }
+})
 
 const App = () => <Router routes={routes} history={history} />
 

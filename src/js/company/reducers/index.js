@@ -1,30 +1,19 @@
+import { Map } from "immutable"
 import { handleActions } from "redux-actions"
 
-const searchCond = {
+const searchCond = Map({
   companyName: "",
   address: "",
   advantageBusiness: "",
   shoryu: [],
   ukeoi: false
-}
-
-const copyObj = obj => Object.assign({}, obj)
-const copyArray = array => array.slice(0)
+})
 
 const shoryu = handleActions({
-  ADD_SHORYU: (state, action) => {
-    const newState = copyObj(state)
-    const newShoryu = copyArray(state.shoryu)
-    newShoryu.push(action.payload)
-    newState.shoryu = newShoryu
-    return newShoryu
-  },
+  ADD_SHORYU: (state, action) => state.set('shoryu', state.shoryu),
   REMOVE_SHORYU: (state, action) => {
-    const newState = copyObj(state)
-    const newShoryu = copyArray(state.shoryu)
-    newShoryu.splice(action.payload, 1)
-    newState.shoryu = newShoryu
-    return newShoryu
+    const shoryus = state.shoryu.delete(action.payload)
+    return state.set('shoryu', shoryus)
   }
 }, searchCond)
 

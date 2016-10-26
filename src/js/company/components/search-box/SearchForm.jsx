@@ -1,12 +1,16 @@
 import React from "react"
 import { CardText } from "material-ui/Card"
-import { Field, FieldArray, reduxForm } from "redux-form"
-import TextField from "material-ui/TextField"
+import { Field, FieldArray, reduxForm } from "redux-form/immutable"
 import FlatButton from "material-ui/FlatButton"
-import FontIcon from "material-ui/FontIcon"
 import AddCircle from "material-ui/svg-icons/content/add-circle"
-import Toggle from "material-ui/Toggle"
+
 import { blue500 } from "material-ui/styles/colors"
+
+import {
+  TextFieldWrapper,
+  ToggleWrapper
+} from "../../../common/components/FieldWrapper"
+import Shoryu from "./Shoryu"
 
 const style = {
   cardText: {
@@ -32,36 +36,18 @@ const style = {
   }
 }
 
-const renderTextField = ({ input, label, meta: { touched, error }}) =>
-  <TextField
-    hintText={label}
-    floatingLabelText={label}
-    style={style.textField}
-    errorText={touched && error}
-    {...input}
-  />
-
-const members = ({ fields }) => {
-  return <ul>
-    {fields.map((member, index) =>
-      <li key={index}>
-        <button
-          type="button"
-          title="Remove"
-          onClick={() => fields.remove(index)}
+const shoryus = ({ fields }) =>
+  <div>
+    <div>
+      {fields.map((shoryu, index) =>
+        <Shoryu
+          inputName={`${shoryu}.shoryu`}
+          toggleName={`${shoryu}.reader`}
+          onClickRemove={() => fields.remove(index)}
+          key={index}
         />
-        <Field
-          name={`${member}.firstName`}
-          type="input"
-          component={({ type, label }) => (
-            <div>
-              <label>{label}</label>
-              <input type={type}/>
-            </div>
-          )}
-        />
-      </li>
-    )}
+      )}
+    </div>
     <FlatButton
       label="商流追加"
       labelPosition="before"
@@ -69,27 +55,38 @@ const members = ({ fields }) => {
       style={style.addShoryu}
       onClick={() => fields.push({})}
     />
-  </ul>
-}
-
-const renderToggle = ({ input, label }) =>
-  <Toggle
-    label={label}
-    style={style.toggle}
-    defaultToggled={input.value ? true : false}
-    onToggle={input.onChange}
-  />
+  </div>
 
 const SearchForm = props =>
   <CardText expandable={true} style={style.cardText}>
     <form onSubmit={props.handleSubmit}>
-      <Field name="companyName" component={renderTextField} label="会社名" />
-      <Field name="address" component={renderTextField} label="住所" />
-      <Field name="advBusiness" component={renderTextField} label="得意業種" />
+      <Field
+        style={style.textField}
+        name="companyName"
+        component={TextFieldWrapper}
+        label="会社名"
+      />
+      <Field
+        style={style.textField}
+        name="address"
+        component={TextFieldWrapper}
+        label="住所"
+      />
+      <Field
+        style={style.textField}
+        name="advBusiness"
+        component={TextFieldWrapper}
+        label="得意業種"
+      />
       <div style={style.toggleDiv}>
-        <Field name="ukeoi" component={renderToggle} label="請負有無" />
+        <Field
+          name="ukeoi"
+          label="請負有無"
+          style={style.toggle}
+          component={ToggleWrapper}
+        />
       </div>
-      <FieldArray name="members" component={members} />
+      <FieldArray name="shoryus" component={shoryus} />
       <FlatButton
         type="submit"
         label="検索"

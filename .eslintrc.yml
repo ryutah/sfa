@@ -8,6 +8,7 @@ parserOptions:
   ecmaFeatures:
     jsx: true
 rules:
+  new-cap: off
   semi: off
   react/jsx-uses-vars:
     - 2

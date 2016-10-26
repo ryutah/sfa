@@ -8,7 +8,7 @@ import {red500, yellow500, blue500} from "material-ui/styles/colors"
 import Person from "material-ui/svg-icons/social/person"
 import Grade from "material-ui/svg-icons/action/grade"
 import Phone from "material-ui/svg-icons/hardware/phone-android"
-import _ from "underscore"
+import { Range } from "immutable"
 
 const style = {
   container: {
